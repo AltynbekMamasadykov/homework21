@@ -1,31 +1,24 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
 
-    // solution with foreach
+        Day[] days = Day.values();
 
-	Кундор[] кундор  = Кундор.values();
-        for (Кундор кун: кундор) {
-            System.out.println(кун.name()+" "+кун);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a day");
+        String dayName = scanner.nextLine();
+
+        for (Day day:days) {
+            if(day.name().equalsIgnoreCase(dayName)){
+                System.out.println(day);
+            }
         }
 
-        System.out.println("---------------------");
-
-    // switch case solution
-
-    Dni dni = Dni.ВОСКРЕСЕНИЕ;
-        switch(dni){
-            case ПОНЕДЕЛЬНИК -> System.out.println(Dni.ПОНЕДЕЛЬНИК.name()+" Java");
-            case ВТОРНИК -> System.out.println(Dni.ВТОРНИК.name()+" English");
-            case СРЕДА -> System.out.println(Dni.СРЕДА.name()+" Soft Skills");
-            case ЧЕТВЕРГ -> System.out.println(Dni.ЧЕТВЕРГ.name()+" Again Java");
-            case ПЯТНИЦА -> System.out.println(Dni.ПЯТНИЦА.name()+" Practice");
-            case СУББОТА -> System.out.println(Dni.СУББОТА.name()+" Homework");
-            case ВОСКРЕСЕНИЕ -> System.out.println(Dni.ВОСКРЕСЕНИЕ.name()+" Relax");
-        }
 
 
 
